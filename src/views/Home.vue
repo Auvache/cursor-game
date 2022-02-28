@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Welcome to the Cursor Game</h1>
+    <p>Move your cursor to the goal to move to the next level</p>
+    <p>If you break the rules, you lose</p>
+    <p>What counts as breaking the rules?</p>
+    <p>I guess you will find out</p>
+    <h2>Good luck</h2>
+    <router-link to="/1">Start the game</router-link>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Level1 from './Level1.vue'
+import { ref } from 'vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  components: { Level1 },
+  setup() {
+    const errorCount = ref(0)
+
+    return { errorCount }
   }
+  
+  
 }
 </script>
+
